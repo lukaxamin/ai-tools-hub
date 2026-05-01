@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to use Claude to code review (free guide)</title>
+<meta name="description" content="How to use Claude to code review (free guide) — comprehensive 2026 guide.">
+<style>body{font-family:system-ui;max-width:780px;margin:2rem auto;padding:0 1rem;color:#222;line-height:1.6}
+h1{font-size:2rem}h2{margin-top:2rem}a{color:#0a58ca}</style>
+</head><body>
+<a href="index.html">← Home</a>
+<h1>How to Use Claude to Code Review: Free Guide</h1>
+
+<p>Code reviews are essential for maintaining code quality, catching bugs early, and sharing knowledge across development teams. However, manual code reviews can be time-consuming and inconsistent. Enter Claude, Anthropic's powerful AI assistant that's available for free through Claude.ai. Claude can serve as an intelligent code reviewer, providing detailed feedback on logic, security, performance, and best practices—without the wait time of human reviewers or the cost of enterprise tools.</p>
+
+<p>Whether you're a solo developer, part of a small team, or managing legacy codebases, Claude offers a practical solution for improving code quality. Unlike traditional code review tools that focus on formatting and style, Claude understands context, identifies potential vulnerabilities, and suggests architectural improvements. The best part? You can start reviewing code immediately at no cost.</p>
+
+<p>This guide walks you through practical strategies for using Claude as your code review assistant, from basic setup to advanced techniques that extract maximum value from the AI's capabilities.</p>
+
+<h2>Getting Started with Claude for Code Review</h2>
+
+<h3>Setting Up Claude</h3>
+
+<p>Before you begin, you'll need access to Claude:</p>
+
+<ul><li>Visit [claude.ai](https://claude.ai) and create a free account</li>
+<li>Free tier users get access to Claude 3.5 Sonnet, which is powerful enough for comprehensive code reviews</li>
+<li>No credit card required for the free tier</li>
+<li>Consider upgrading to Claude Pro ($20/month) if you're reviewing large codebases or need unlimited conversations</li>
+</ul>
+<h3>Preparing Your Code for Review</h3>
+
+<p>When submitting code to Claude, format it properly for clarity:</p>
+
+<ul><li>Copy and paste code directly into the chat</li>
+<li>For larger files, share snippets rather than entire thousands-line files</li>
+<li>Use proper markdown code blocks with language specification (```python, ```javascript, etc.)</li>
+<li>Include context about the code's purpose, framework, and intended audience</li>
+<li>Mention any specific concerns you want Claude to focus on</li>
+</ul>
+<h3>Structuring Your Review Requests</h3>
+
+<p>The quality of Claude's feedback depends heavily on how you frame your request. Instead of simply pasting code and saying "review this," provide context:</p>
+
+<p>"I'm building a Django REST API endpoint for user authentication. Here's my login view. Please check for security vulnerabilities, inefficiencies, and suggest improvements for error handling."</p>
+
+<p>This specific framing guides Claude toward the most relevant feedback for your use case.</p>
+
+<h2>Common Code Review Scenarios</h2>
+
+<h3>Security Vulnerability Detection</h3>
+
+<p>Security is one of Claude's strongest code review capabilities:</p>
+
+<ul><li>**SQL Injection risks**: Claude identifies unsafe query construction and recommends parameterized queries</li>
+<li>**Authentication flaws**: Catches hardcoded credentials, weak token validation, and session handling issues</li>
+<li>**API vulnerabilities**: Detects missing input validation, improper authorization checks, and data exposure risks</li>
+</ul>
+**Example request**: "Review this Node.js API endpoint for security issues, particularly focusing on input validation and data exposure."
+
+<h3>Performance and Optimization</h3>
+
+<p>Claude can spot performance bottlenecks that might be overlooked:</p>
+
+<ul><li>Identifying N+1 query problems in database operations</li>
+<li>Recommending caching strategies</li>
+<li>Spotting unnecessary loops or redundant operations</li>
+<li>Suggesting algorithmic improvements</li>
+</ul>
+**Example request**: "This Python function processes user data from a database. It's running slowly on datasets with 100k+ records. What optimizations would you suggest?"
+
+<h3>Architecture and Design Pattern Review</h3>
+
+<p>Beyond syntax, Claude evaluates architectural decisions:</p>
+
+<ul><li>**SOLID principles**: Suggests ways to improve Single Responsibility, Open/Closed, Liskov, Interface Segregation, and Dependency Inversion</li>
+<li>**Design patterns**: Recommends appropriate design patterns or refactoring to eliminate anti-patterns</li>
+<li>**Code organization**: Advises on module structure and separation of concerns</li>
+</ul>
+<h2>Advanced Code Review Techniques</h2>
+
+<h3>Multi-Round Review Process</h3>
+
+<p>Don't expect perfection in one pass. Use Claude conversationally:</p>
+
+<p>1. **Initial review**: Submit code and get general feedback
+2. **Follow-up questions**: Ask Claude to dive deeper into specific areas
+3. **Solution verification**: Share your fixes and ask Claude to verify they address the issues
+4. **Comparative analysis**: Show Claude multiple approaches and ask which is better</p>
+
+<h3>Comparative Code Reviews</h3>
+
+<p>When you have multiple implementations of the same feature:</p>
+
+<p>"I have two ways to implement pagination in my API. Which is better for scalability and maintainability? Here's approach A... and approach B..."</p>
+
+<p>Claude can evaluate trade-offs and explain why one might be preferable for your specific use case.</p>
+
+<h3>Testing and Test Coverage Review</h3>
+
+<p>Claude can review test code itself:</p>
+
+<ul><li>Evaluate whether tests adequately cover edge cases</li>
+<li>Suggest additional test scenarios</li>
+<li>Identify brittle tests that might give false positives</li>
+<li>Recommend testing strategies for complex logic</li>
+</ul>
+**Example request**: "Here's my test suite for a payment processing module. Are there scenarios I'm missing? Could these tests be more maintainable?"
+
+<h3>Documentation and Code Clarity</h3>
+
+<p>Submit code and ask Claude to:</p>
+
+<ul><li>Suggest improvements for code clarity and readability</li>
+<li>Identify areas needing better documentation</li>
+<li>Review existing comments for accuracy and usefulness</li>
+<li>Recommend docstring improvements</li>
+</ul>
+<h2>Best Practices for Effective Claude Code Reviews</h2>
+
+<h3>Context is Everything</h3>
+
+<p>More context always leads to better feedback. Include:</p>
+
+<ul><li>The programming language and framework</li>
+<li>What the code is supposed to do</li>
+<li>Any constraints or requirements</li>
+<li>The team's coding standards</li>
+<li>Performance or security requirements</li>
+</ul>
+<h3>Be Specific About Concerns</h3>
+
+<p>Vague requests produce vague feedback. Instead of "review my code," ask:</p>
+
+<ul><li>"Does this properly escape user input?"</li>
+<li>"Will this scale to 100k concurrent users?"</li>
+<li>"Is this following React best practices?"</li>
+<li>"Could this cause memory leaks?"</li>
+</ul>
+<h3>Use Multiple Perspectives</h3>
+
+<p>Ask Claude to review code from different angles:</p>
+
+<ul><li>Security review</li>
+<li>Performance review</li>
+<li>Maintainability review</li>
+<li>Documentation review</li>
+</ul>
+Running multiple focused reviews often catches issues that a single general review might miss.
+
+<h3>Create Custom Review Checklists</h3>
+
+<p>Establish a checklist based on your project's priorities:</p>
+
+<p>```
+<ul><li>[ ] No hardcoded credentials or secrets</li>
+<li>[ ] Input validation on all external data</li>
+<li>[ ] Error handling with appropriate logging</li>
+<li>[ ] Database queries use parameterized statements</li>
+<li>[ ] Performance acceptable for expected scale</li>
+<li>[ ] Code follows team style guide</li>
+<li>[ ] Tests cover happy path and edge cases</li>
+</ul>```</p>
+
+<p>Share this with Claude to create consistency across reviews.</p>
+
+<h2>Limitations and Complementary Approaches</h2>
+
+<h3>When Claude Alone Isn't Enough</h3>
+
+<p>While Claude excels at code review, some aspects require human judgment:</p>
+
+<ul><li>**Business logic validation**: Only domain experts can confirm if code correctly implements requirements</li>
+<li>**Team culture fit**: Humans decide if code aligns with team preferences beyond standards</li>
+<li>**Architectural decisions**: Major design decisions benefit from team discussion</li>
+<li>**Legacy codebase knowledge**: Context about why certain patterns exist matters</li>
+</ul>
+<h3>Combining Claude with Other Tools</h3>
+
+<p>For comprehensive code review, combine Claude with:</p>
+
+<ul><li>**Linters and formatters**: Handle style and syntax automatically (ESLint, Pylint, prettier)</li>
+<li>**Static analysis tools**: Catch type errors and common mistakes (TypeScript, mypy, SonarQube)</li>
+<li>**Human reviewers**: For business logic, mentoring, and knowledge sharing</li>
+<li>**CI/CD checks**: Automated testing and security scanning during deployment</li>
+</ul>
+<h2>Frequently Asked Questions</h2>
+
+<h3>Is using Claude for code review accurate enough for production code?</h3>
+
+<p>Claude provides excellent guidance for catching bugs, security issues, and suggesting improvements. However, for mission-critical production systems, combine Claude's feedback with human review and automated testing. Claude works best as a first pass that accelerates human review rather than replacing it entirely.</p>
+
+<h3>Can Claude review code in all programming languages?</h3>
+
+<p>Claude can review code in virtually all popular programming languages including Python, JavaScript, Java, Go, Rust, C++, and many others. It's particularly strong with languages where it has extensive training data. For very niche or new languages, it may be less effective.</p>
+
+<h3>How much code can I submit at once to Claude?</h3>
+
+<p>Claude's context window allows for substantial code submissions—typically several thousand lines depending on your message length. For larger codebases, review files or modules individually rather than submitting everything at once. This also results in more focused, actionable feedback.</p>
+
+<h3>Will Claude see proprietary code I submit?</h3>
+
+<p>Claude conversations are subject to Anthropic's privacy policy. If you're concerned about proprietary code, review Anthropic's terms or use Claude with code that doesn't contain sensitive business logic or trade secrets.</p>
+
+<h3>How does Claude code review compare to GitHub Copilot or other AI tools?</h3>
+
+<p>Claude focuses on comprehensive code quality analysis, while tools like Copilot emphasize code generation. For pure review purposes, Claude's ability to understand context and provide detailed reasoning makes it exceptionally strong. Different tools have different strengths—experiment to find what works best for your workflow.</p>
+
+<h2>Conclusion</h2>
+
+<p>Claude offers a practical, free solution for improving code quality through intelligent review. By leveraging Claude's ability to understand context, identify vulnerabilities, and suggest improvements, you can accelerate your development process and catch issues earlier.</p>
+
+<p>The key to success is treating Claude as a collaborative tool rather than an automatic solution. Provide clear context, ask specific questions, and use Claude's feedback as the first pass in a comprehensive quality process. Combine it with human review, automated testing, and other tools for maximum effectiveness.</p>
+
+<p>Start small—try reviewing a single function or small module to get comfortable with the process. Gradually expand to more complex code as you discover which types of reviews Claude handles best for your specific projects. Within a few reviews, you'll develop a workflow that makes code review faster, more thorough, and genuinely helpful for your team's development process.</p>
+<hr><footer style="color:#666;font-size:.9em">Published 2026 · <a href="index.html">All guides</a></footer>
+</body></html>

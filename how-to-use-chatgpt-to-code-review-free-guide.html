@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to use ChatGPT to code review (free guide)</title>
+<meta name="description" content="How to use ChatGPT to code review (free guide) — comprehensive 2026 guide.">
+<style>body{font-family:system-ui;max-width:780px;margin:2rem auto;padding:0 1rem;color:#222;line-height:1.6}
+h1{font-size:2rem}h2{margin-top:2rem}a{color:#0a58ca}</style>
+</head><body>
+<a href="index.html">← Home</a>
+<h1>How to Use ChatGPT to Code Review: Free Guide</h1>
+
+<p>Code reviews are essential for maintaining code quality, catching bugs early, and sharing knowledge across development teams. However, thorough code reviews consume significant time and resources. ChatGPT offers a powerful, free alternative that can augment your review process, providing immediate feedback on syntax, logic, performance, and security concerns. Whether you're a solo developer or part of a larger team, ChatGPT can serve as your tireless code review assistant, available 24/7.</p>
+
+<p>The beauty of using ChatGPT for code reviews lies in its accessibility and versatility. You don't need expensive tools or complex setups—just copy your code into the chat interface and receive detailed analysis within seconds. This guide walks you through everything you need to know to effectively leverage ChatGPT as a code review tool, from basic usage patterns to advanced techniques that rival traditional code review platforms.</p>
+
+<h2>Understanding ChatGPT's Code Review Capabilities</h2>
+
+<h3>What ChatGPT Can Analyze</h3>
+
+<p>ChatGPT can evaluate code across multiple dimensions, making it a comprehensive review tool:</p>
+
+<ul><li>**Syntax errors and language-specific issues** – Catches typos, incorrect operators, and API misuse</li>
+<li>**Logic bugs and algorithmic problems** – Identifies flawed conditional statements and inefficient approaches</li>
+<li>**Performance bottlenecks** – Spots unnecessary loops, memory leaks, and suboptimal data structures</li>
+<li>**Security vulnerabilities** – Detects hardcoded credentials, SQL injection risks, and unsafe dependencies</li>
+<li>**Code style and readability** – Reviews naming conventions, documentation, and structural clarity</li>
+<li>**Best practices alignment** – Checks against language-specific and framework conventions</li>
+</ul>
+<h3>Supported Programming Languages</h3>
+
+<p>ChatGPT supports virtually all major programming languages, including Python, JavaScript, Java, C++, Go, Rust, PHP, Ruby, and many others. It even handles niche languages and domain-specific languages reasonably well.</p>
+
+<h3>Limitations to Acknowledge</h3>
+
+<p>ChatGPT works best with complete, self-contained code snippets. It cannot:</p>
+
+<ul><li>Execute code to verify runtime behavior</li>
+<li>Access external dependencies or libraries automatically</li>
+<li>Review code in extremely large monolithic files (though you can break them into sections)</li>
+<li>Understand complex custom architectures without explicit context</li>
+</ul>
+<h2>Setting Up Effective Code Review Prompts</h2>
+
+<h3>Crafting the Perfect Prompt</h3>
+
+<p>The quality of ChatGPT's feedback depends entirely on how you frame your request. Generic prompts yield generic responses. Specific, detailed prompts produce actionable insights.</p>
+
+<p>**Effective prompt structure:**</p>
+
+<p>```
+Review this [LANGUAGE] code for [SPECIFIC FOCUS AREAS].
+Check for:
+<ul><li>[Specific concern 1]</li>
+<li>[Specific concern 2]</li>
+<li>[Specific concern 3]</li>
+</ul>
+Context: [Explain what the code does and its purpose]</p>
+
+<p>[CODE SNIPPET]
+```</p>
+
+<p>**Example prompt:**</p>
+
+<p>```
+Review this Python function for security vulnerabilities and performance issues.
+Check for:
+<ul><li>SQL injection risks</li>
+<li>Unnecessary database queries</li>
+<li>Memory efficiency with large datasets</li>
+</ul>
+Context: This function retrieves user profile data from a PostgreSQL database based on user ID.</p>
+
+<p>def get_user_profile(user_id):
+    query = f"SELECT * FROM users WHERE id = {user_id}"
+    result = db.execute(query)
+    return result
+```</p>
+
+<h3>Providing Necessary Context</h3>
+
+<p>Context transforms ChatGPT from a generic analyzer into a targeted reviewer:</p>
+
+<ul><li>Explain the code's purpose and the problem it solves</li>
+<li>Mention any framework or library dependencies</li>
+<li>Specify your target environment (production, embedded system, etc.)</li>
+<li>Indicate performance requirements or constraints</li>
+<li>Note any specific coding standards you follow</li>
+</ul>
+<h2>Practical Code Review Workflows</h2>
+
+<h3>Single File Reviews</h3>
+
+<p>For reviewing individual files or functions, use this approach:</p>
+
+<p>1. Copy the entire function or file into ChatGPT
+2. Provide context about what the code does
+3. List specific concerns you want addressed
+4. Request suggestions for improvement with code examples</p>
+
+<p>ChatGPT will typically provide:
+<ul><li>A summary of what the code does</li>
+<li>Identified issues ranked by severity</li>
+<li>Corrected code with explanations</li>
+<li>Alternative approaches when relevant</li>
+</ul>
+<h3>Multi-File Reviews</h3></p>
+
+<p>For larger codebases, break reviews into logical units:</p>
+
+<p>1. **Review one module at a time** – Send related functions together
+2. **Start with core logic** – Review business-critical code first
+3. **Progress to utilities** – Then review helper functions and utilities
+4. **Ask for integration concerns** – Finally, request feedback on how modules interact</p>
+
+<h3>Comparative Reviews</h3>
+
+<p>Ask ChatGPT to compare approaches:</p>
+
+<p>```
+I have two ways to implement user authentication in Node.js. Which is better for a production API, and why?</p>
+
+<p>Implementation A:
+[CODE SNIPPET A]</p>
+
+<p>Implementation B:
+[CODE SNIPPET B]</p>
+
+<p>Consider: security, performance, and maintainability.
+```</p>
+
+<p>This helps you evaluate design decisions before committing code.</p>
+
+<h2>Advanced Techniques for Better Reviews</h2>
+
+<h3>Requesting Specific Review Types</h3>
+
+<p>**Security review:**
+```
+Perform a security audit of this authentication middleware. Flag potential vulnerabilities, credential leaks, and unsafe practices.
+```</p>
+
+<p>**Performance review:**
+```
+Analyze this sorting algorithm for time and space complexity. Suggest optimizations for datasets with 1 million+ records.
+```</p>
+
+<p>**Maintainability review:**
+```
+Evaluate this code's readability and adherence to clean code principles. Suggest refactoring that improves maintainability.
+```</p>
+
+<h3>Creating Custom Review Checklists</h3>
+
+<p>Develop personalized review criteria and share them with ChatGPT:</p>
+
+<p>```
+Use this checklist for all code reviews you perform for me:
+<ul><li>[ ] All functions have docstrings</li>
+<li>[ ] Variable names are descriptive (no single letters except loops)</li>
+<li>[ ] Error handling is comprehensive</li>
+<li>[ ] No magic numbers (constants should be named)</li>
+<li>[ ] Functions are under 50 lines</li>
+<li>[ ] No console.log() left in production code</li>
+</ul>
+Now review this code against this checklist:
+[CODE]
+```</p>
+
+<h3>Iterative Review Process</h3>
+
+<p>Use follow-up questions to dig deeper:</p>
+
+<p>```
+You mentioned this loop could be optimized. Can you show me a vectorized approach using NumPy?
+```</p>
+
+<p>```
+How would this change if we needed to handle 100,000 requests per second?
+```</p>
+
+<p>```
+Can you add type hints and improve the docstring for this function?
+```</p>
+
+<p>ChatGPT maintains conversation context, allowing natural dialogue about the code.</p>
+
+<h2>Integrating ChatGPT into Your Development Workflow</h2>
+
+<h3>Before Pull Requests</h3>
+
+<p>Run code through ChatGPT before submitting pull requests to catch obvious issues early, reducing back-and-forth with reviewers.</p>
+
+<h3>During Team Reviews</h3>
+
+<p>Use ChatGPT as a supplementary reviewer alongside human code review. It excels at spotting patterns and technical issues, freeing humans to focus on architectural and design concerns.</p>
+
+<h3>For Learning and Mentorship</h3>
+
+<p>Junior developers can use ChatGPT to learn review standards. Ask ChatGPT to explain *why* something is an issue:</p>
+
+<p>```
+Why is this SQL vulnerable to injection? Explain in simple terms.
+```</p>
+
+<h3>Documentation Generation</h3>
+
+<p>After reviewing code, ask ChatGPT to generate documentation:</p>
+
+<p>```
+Create clear API documentation for this JavaScript function:
+[CODE]
+```</p>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>Is using ChatGPT for code review reliable?</h3>
+
+<p>Yes, for most use cases. ChatGPT catches genuine issues in syntax, logic, security, and performance. However, it should complement—not replace—human review for mission-critical code. Human reviewers catch architectural concerns and design trade-offs that AI may miss.</p>
+
+<h3>Can ChatGPT review my entire codebase at once?</h3>
+
+<p>ChatGPT has token limits (roughly 3,000-4,000 words of input for free tier users). Break large codebases into modules or files. It's actually better practice anyway, as focused reviews produce better feedback.</p>
+
+<h3>Does ChatGPT have access to the code I share?</h3>
+
+<p>OpenAI uses your conversations to improve its services (unless you opt out in settings). Don't share proprietary code or sensitive information. For sensitive projects, consider setting your conversation history to disabled.</p>
+
+<h3>How accurate is ChatGPT's security analysis?</h3>
+
+<p>ChatGPT effectively identifies common vulnerabilities like SQL injection, hardcoded secrets, and unsafe dependencies. However, sophisticated security issues require specialized tools. Use ChatGPT as a first-pass filter, not a replacement for security tools like SAST platforms.</p>
+
+<h3>What's the best way to ask ChatGPT to review legacy code?</h3>
+
+<p>Provide context about the codebase's age and constraints: "This is legacy Python 2 code we can't fully rewrite. What are the highest-priority modernization steps?" This helps ChatGPT give practical, actionable advice rather than suggesting a complete rewrite.</p>
+
+<h2>Conclusion</h2>
+
+<p>ChatGPT represents a fundamental shift in accessible code review capabilities. By providing clear context, specific instructions, and iterative follow-ups, you can harness its analytical power to significantly improve code quality. The free tier is powerful enough for most developers; if you review code regularly, ChatGPT Plus's higher limits may justify the cost.</p>
+
+<p>Start small—use it to review a single function this week. Notice which types of feedback prove most valuable, then refine your approach. Over time, you'll develop a personalized code review process that combines ChatGPT's immediate availability with human insight. The result is faster development cycles, fewer bugs, and code that aligns with your team's standards.</p>
+<hr><footer style="color:#666;font-size:.9em">Published 2026 · <a href="index.html">All guides</a></footer>
+</body></html>
